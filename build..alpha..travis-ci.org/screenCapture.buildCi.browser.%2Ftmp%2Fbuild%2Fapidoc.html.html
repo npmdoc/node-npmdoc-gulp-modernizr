@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/doctyper/gulp-modernizr"
-
-    >gulp-modernizr (v0.0.0)</a>
+    <a href="https://github.com/doctyper/gulp-modernizr">gulp-modernizr (v0.0.0)</a>
 </h1>
 <h4>Gulp wrapper for custom Modernizr builds</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-modernizr">module gulp-modernizr</a><ol>
 
@@ -108,14 +101,14 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">gulp-modernizr = function (fileName, opt) {
-	&#x22;use strict&#x22;;
+	"use strict";
 
 	// Set some defaults
-	var PLUGIN_NAME = &#x22;gulp-modernizr&#x22;,
-		DEFAULT_FILE_NAME = &#x22;modernizr.js&#x22;;
+	var PLUGIN_NAME = "gulp-modernizr",
+		DEFAULT_FILE_NAME = "modernizr.js";
 
 	// Ensure fileName exists
-	if (typeof fileName === &#x22;undefined&#x22;) {
+	if (typeof fileName === "undefined") {
 		fileName = opt ? opt.dest : DEFAULT_FILE_NAME;
 	} else if (typeof fileName === typeof {}) {
 		opt = fileName;
@@ -128,7 +121,7 @@
 	// Enable string parsing in customizr
 	opt.useBuffers = true;
 
-	// Set crawl to false, Gulp is providing files &#x26; data
+	// Set crawl to false, Gulp is providing files &amp; data
 	opt.crawl = false;
 
 	// Reset opt.files. Store buffers here.
@@ -137,7 +130,7 @@
 	};
 
 	// Per Gulp docs (https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md)
-	// &#x22;Your plugin shouldn&#x27;t do things that other plugins are responsible for&#x22;
+	// "Your plugin shouldn't do things that other plugins are responsible for"
 	opt.uglify = false;
 
 	// Save first file for metadata purposes
@@ -153,9 +146,9 @@
 
 		// No stream support (yet?)
 		if (file.isStream()) {
-			stream.emit(&#x22;error&#x22;, new gutil.PluginError({
+			stream.emit("error", new gutil.PluginError({
 				plugin: PLUGIN_NAME,
-				message: &#x22;Streaming not supported&#x22;
+				message: "Streaming not supported"
 			}));
 
 			return callback();
@@ -182,9 +175,9 @@
 
 			// Sanity check
 			if (!data.result) {
-				return stream.emit(&#x22;error&#x22;, new gutil.PluginError({
+				return stream.emit("error", new gutil.PluginError({
 					plugin: PLUGIN_NAME,
-					message: &#x22;No data returned&#x22;
+					message: "No data returned"
 				}));
 			}
 
@@ -251,3 +244,4 @@
     ]
 </div>
 </div>
+</body></html>

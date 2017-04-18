@@ -61,12 +61,187 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-modernizr">module gulp-modernizr</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-modernizr.gulp-modernizr">
+            function <span class="apidocSignatureSpan"></span>gulp-modernizr
+            <span class="apidocSignatureSpan">(fileName, opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-modernizr.toString">
+            function <span class="apidocSignatureSpan">gulp-modernizr.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-modernizr.toString">module gulp-modernizr.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-modernizr.toString.toString">
+            function <span class="apidocSignatureSpan">gulp-modernizr.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.gulp-modernizr" id="apidoc.module.gulp-modernizr">module gulp-modernizr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-modernizr.gulp-modernizr" id="apidoc.element.gulp-modernizr.gulp-modernizr">
+        function <span class="apidocSignatureSpan"></span>gulp-modernizr
+        <span class="apidocSignatureSpan">(fileName, opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gulp-modernizr = function (fileName, opt) {
+	&#x22;use strict&#x22;;
+
+	// Set some defaults
+	var PLUGIN_NAME = &#x22;gulp-modernizr&#x22;,
+		DEFAULT_FILE_NAME = &#x22;modernizr.js&#x22;;
+
+	// Ensure fileName exists
+	if (typeof fileName === &#x22;undefined&#x22;) {
+		fileName = opt ? opt.dest : DEFAULT_FILE_NAME;
+	} else if (typeof fileName === typeof {}) {
+		opt = fileName;
+		fileName = DEFAULT_FILE_NAME;
+	}
+
+	// Ensure opt exists
+	opt = opt || {};
+
+	// Enable string parsing in customizr
+	opt.useBuffers = true;
+
+	// Set crawl to false, Gulp is providing files &#x26; data
+	opt.crawl = false;
+
+	// Reset opt.files. Store buffers here.
+	opt.files = {
+		src: []
+	};
+
+	// Per Gulp docs (https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/guidelines.md)
+	// &#x22;Your plugin shouldn&#x27;t do things that other plugins are responsible for&#x22;
+	opt.uglify = false;
+
+	// Save first file for metadata purposes
+	var firstFile;
+
+	function storeBuffers(file, enc, callback) {
+
+		// Return if null
+		if (file.isNull()) {
+			stream.push(file);
+			return callback();
+		}
+
+		// No stream support (yet?)
+		if (file.isStream()) {
+			stream.emit(&#x22;error&#x22;, new gutil.PluginError({
+				plugin: PLUGIN_NAME,
+				message: &#x22;Streaming not supported&#x22;
+			}));
+
+			return callback();
+		}
+
+		// Set first file
+		if (!firstFile) {
+			firstFile = file;
+		}
+
+		// Save buffer for later use
+		opt.files.src.push(file);
+
+		return callback();
+	}
+
+	function generateModernizr(callback) {
+		if (opt.files.src.length === 0) {
+			return callback();
+		}
+
+		// Call customizr
+		customizr(opt, function (data) {
+
+			// Sanity check
+			if (!data.result) {
+				return stream.emit(&#x22;error&#x22;, new gutil.PluginError({
+					plugin: PLUGIN_NAME,
+					message: &#x22;No data returned&#x22;
+				}));
+			}
+
+			// Save result
+			var file = new gutil.File({
+				path: path.join(firstFile.base, fileName),
+				base: firstFile.base,
+				cwd: firstFile.cwd,
+				contents: new Buffer(data.result)
+			});
+
+			// Pass data along
+			stream.push(file);
+
+			return callback();
+		});
+	}
+
+	var stream = through.obj(storeBuffers, generateModernizr);
+	return stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-modernizr.toString" id="apidoc.element.gulp-modernizr.toString">
+        function <span class="apidocSignatureSpan">gulp-modernizr.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-modernizr.toString" id="apidoc.module.gulp-modernizr.toString">module gulp-modernizr.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-modernizr.toString.toString" id="apidoc.element.gulp-modernizr.toString.toString">
+        function <span class="apidocSignatureSpan">gulp-modernizr.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
