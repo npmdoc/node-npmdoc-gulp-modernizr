@@ -1,9 +1,14 @@
-# api documentation for  [gulp-modernizr (v0.0.0)](https://github.com/doctyper/gulp-modernizr)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-modernizr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-modernizr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-modernizr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-modernizr)
+# npmdoc-gulp-modernizr
+
+#### api documentation for  [gulp-modernizr (v0.0.0)](https://github.com/doctyper/gulp-modernizr)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-modernizr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-modernizr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-modernizr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-modernizr)
+
 #### Gulp wrapper for custom Modernizr builds
 
-[![NPM](https://nodei.co/npm/gulp-modernizr.png?downloads=true)](https://www.npmjs.com/package/gulp-modernizr)
+[![NPM](https://nodei.co/npm/gulp-modernizr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-modernizr)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-modernizr/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-gulp-modernizr_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-modernizr/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-gulp-modernizr/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-gulp-modernizr/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-modernizr/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-modernizr/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-gulp-modernizr/build/screenCapture.npmPackageListing.svg)
 
@@ -50,13 +55,11 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "metalshark",
-            "email": "beechhorn@gmail.com"
+            "name": "metalshark"
         }
     ],
     "name": "gulp-modernizr",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/doctyper/gulp-modernizr.git"
@@ -67,16 +70,6 @@
     "version": "0.0.0"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module gulp-modernizr](#apidoc.module.gulp-modernizr)
-
-
-
-# <a name="apidoc.module.gulp-modernizr"></a>[module gulp-modernizr](#apidoc.module.gulp-modernizr)
 
 
 
