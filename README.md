@@ -1,6 +1,6 @@
 # npmdoc-gulp-modernizr
 
-#### api documentation for  [gulp-modernizr (v0.0.0)](https://github.com/doctyper/gulp-modernizr)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-modernizr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-modernizr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-modernizr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-modernizr)
+#### basic api documentation for  [gulp-modernizr (v0.0.0)](https://github.com/doctyper/gulp-modernizr)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-modernizr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-modernizr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-modernizr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-modernizr)
 
 #### Gulp wrapper for custom Modernizr builds
 
@@ -67,7 +67,8 @@
     "scripts": {
         "test": "node test/runner.js"
     },
-    "version": "0.0.0"
+    "version": "0.0.0",
+    "bin": {}
 }
 ```
 
